@@ -65,8 +65,7 @@ impl PerlinNoise {
         }
         
         for i in 0..256 {
-
-            let mut v =0;
+            let mut  v: usize =0;
             if i & 1 == 1 {
                 v = p[i] ^ (seed0 & 255) as usize;
             } else {
@@ -145,14 +144,14 @@ impl PerlinNoise {
     
     pub fn  simplex2(&self,xin:f64,yin:f64) ->f64{   
     
-        let F2 = 0.5*(3.0_f64.sqrt()-1.0);
-        let G2 = (3.0-3.0_f64.sqrt())/6.0;
-        let s = (xin+yin)*F2; // Hairy factor for 2D
+        let f2 = 0.5*(3.0_f64.sqrt()-1.0);
+        let g2 = (3.0-3.0_f64.sqrt())/6.0;
+        let s = (xin+yin)*f2; // Hairy factor for 2D
 
         let i  = (xin+s).floor();
         let j = (yin+s).floor();
 
-        let t = (i+j)*G2;
+        let t = (i+j)*g2;
 
         let x0 = xin-i+t; // The x,y distances from the cell origin, unskewed.
         let y0 = yin-j+t;
@@ -170,10 +169,10 @@ impl PerlinNoise {
         // A step of (1,0) in (i,j) means a step of (1-c,-c) in (x,y), and
         // a step of (0,1) in (i,j) means a step of (-c,1-c) in (x,y), where
         // c = (3-sqrt(3))/6
-        let x1 = x0 - i1 as f64 + G2; // Offsets for middle corner in (x,y) unskewed coords
-        let y1 = y0 - j1 as f64+ G2;
-        let x2 = x0 - 1.0 + 2.0 * G2; // Offsets for last corner in (x,y) unskewed coords
-        let y2 = y0 - 1.0 + 2.0 * G2;
+        let x1 = x0 - i1 as f64 + g2; // Offsets for middle corner in (x,y) unskewed coords
+        let y1 = y0 - j1 as f64+ g2;
+        let x2 = x0 - 1.0 + 2.0 * g2; // Offsets for last corner in (x,y) unskewed coords
+        let y2 = y0 - 1.0 + 2.0 * g2;
 
         // Work out the hashed gradient indices of the three simplex corners
         let i =i as usize & 255;
