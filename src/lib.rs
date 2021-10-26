@@ -6,7 +6,7 @@ pub use perlin::PerlinNoise;
 #[cfg(test)]
 mod tests {
     #[test]
-    fn it_works() {
+    fn it_works() { 
         use super::PerlinNoise;
         let perlin = PerlinNoise::new(100.0); //use seed
 
