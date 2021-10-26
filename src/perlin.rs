@@ -65,7 +65,7 @@ impl PerlinNoise {
         }
         
         for i in 0..256 {
-            let mut  v: usize =0;
+            let   v: usize;
             if i & 1 == 1 {
                 v = p[i] ^ (seed0 & 255) as usize;
             } else {
@@ -158,8 +158,8 @@ impl PerlinNoise {
         // For the 2D case, the simplex shape is an equilateral triangle.
         // Determine which simplex we are in.
 
-        let mut  i1:usize=0;
-        let mut j1:usize =0; // Offsets for second (middle) corner of simplex in (i,j) coords
+        let   i1:usize;
+        let  j1:usize; // Offsets for second (middle) corner of simplex in (i,j) coords
 
         if x0>y0 { // lower triangle, XY order: (0,0)->(1,0)->(1,1)
           i1=1; j1=0;
@@ -185,9 +185,9 @@ impl PerlinNoise {
         let mut t0 = 0.5 - x0*x0-y0*y0;
 
 
-        let mut n0=0.0;
-        let mut n1=0.0;
-        let mut n2=0.0; // Noise contributions from the three corners
+        let  n0:f64;
+        let  n1:f64;
+        let  n2:f64; // Noise contributions from the three corners
 
 
         if t0<0.0 {
