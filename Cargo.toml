@@ -1,0 +1,11 @@
+[package]
+name = "perlin_rust"
+version = "0.1.0"
+edition = "2018"
+keywords = ["noise","perlin"]
+license = "MIT"
+repository = "https://github.com/wantaotao1994/perlin_rust.git"
+description = "A simple perlin noise implementation in Rust"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
