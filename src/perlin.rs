@@ -106,7 +106,7 @@ impl PerlinNoise {
                 fade(y))
     }
 
-    pub fn perlin3(&self,x:f64,y:f64,z:f64){
+    pub fn perlin3(&self,x:f64,y:f64,z:f64) ->f64{
         let x0 = (x.floor() as usize) & 255;
         let y0 = (y.floor() as usize) & 255;
         let z0 = (z.floor() as usize) & 255;
@@ -137,7 +137,7 @@ impl PerlinNoise {
             lerp(
               lerp(n010, n110, u),
               lerp(n011, n111, u), w),
-           v);
+           v)
     }
 
     
