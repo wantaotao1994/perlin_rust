@@ -1,10 +1,10 @@
 [package]
 name = "perlin_rust"
-version = "0.1.0"
-edition = "2018"
+version = "0.0.1"
+edition = "2021"
 keywords = ["noise","perlin"]
 license = "MIT"
-repository = "https://github.com/wantaotao1994/perlin_rust.git"
+repository = "https://github.com/jordan4ibanez/perlin_rust"
 description = "A simple perlin noise implementation in Rust"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
