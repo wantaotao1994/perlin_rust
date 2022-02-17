@@ -9,10 +9,7 @@ mod tests {
     fn it_works() { 
         use super::PerlinNoise;
         let perlin = PerlinNoise::new(100.0); //use seed
-
-
-      
-
         assert_eq!(  perlin.perlin2(0.01,0.01), -0.00000009860109363395148);
+        assert_eq!(  perlin.perlin3(0.01, 0.01, 0.01), 0.01999940916000743);
     }
 }
